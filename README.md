@@ -1,1 +1,1 @@
-SampleWeb Page
+SampleWebPage
