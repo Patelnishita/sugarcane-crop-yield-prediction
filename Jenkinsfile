@@ -2,26 +2,32 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                sh 'python3 --version'
-                sh 'pip3 install -r requirements.txt'
+                echo 'Repository checked out successfully.'
             }
         }
 
-        stage('Test') {
+        stage('Verify Files') {
             steps {
-                sh 'python3 -m unittest discover'
+                sh 'pwd'
+                sh 'ls -la'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'No build required for a static website.'
             }
         }
     }
 
     post {
         success {
-            echo 'Build Successful!'
+            echo 'Pipeline executed successfully!'
         }
         failure {
-            echo 'Build Failed!'
+            echo 'Pipeline failed!'
         }
     }
 }
