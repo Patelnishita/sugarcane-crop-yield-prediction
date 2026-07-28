@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Patelnishita/sugarcane-crop-yield-prediction'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'python3 --version'
