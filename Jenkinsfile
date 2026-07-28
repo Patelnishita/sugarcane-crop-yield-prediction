@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Repository checked out successfully.'
+                git branch: 'main',
+                    url: 'https://github.com/Patelnishita/sugarcane-crop-yield-prediction'
             }
         }
 
@@ -17,7 +18,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'No build required for a static website.'
+                echo 'No build required for HTML project.'
             }
         }
     }
